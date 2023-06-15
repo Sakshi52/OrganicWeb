@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<div class="row">
+<div class="col-md-3 mt-3  border border-success-subtle shadow p-3">
+ <h3 class="text-white p-2 text-center" style="background-color: rgb(20,219,20);">Sort By Price</h3>
+ <ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link text-dark" href="/sort/0"><h5>Low to High</h5></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-dark" href="/sort/1"><h5>High to Low</h5></a>
+  </li>
+ 
+</ul><!--sort end-->
+
+<h3 class="text-white p-2 text-center" style="background-color: rgb(20,219,20);">Filters</h3>
+<h4>By Category</h4>
+<ul class="nav flex-column">
+  <!-- <li class="nav-item">
+    <a class="nav-link text-dark" href="/catfilter/0"><h5>All</h5></a>
+  </li> -->
+  
+  <li class="nav-item">
+    <a class="nav-link text-dark" href="/catfilter/0"><h5>All</h5></a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link text-dark" href="/catfilter/1"><h5>Fruits</h5></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-dark" href="/catfilter/2"><h5>Vegetables</h5></a>
+  </li>
+  
+
+ 
+</ul><!--cat filter end-->
+
+<h4>By Price</h4>
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link text-dark" href="/pricefilter/0"><h5> < Rs.100 </h5></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-dark" href="/pricefilter/1"><h5> >= Rs.100</h5></a>
+  </li>
+ 
+</ul><!--price filter end-->
+
+<h4>By Price range</h4>
+<form action="/pricerange">
+  <div class="mb-3">
+    <label for="one" class="form-label">Min</label>
+    <input type="number" class="form-control" name="min" id="one" placeholder="Min value">
+  </div>
+
+  <div class="mb-3">
+    <label for="two" class="form-label">Max</label>
+    <input type="number" class="form-control" name="max" id="two" placeholder="Max value">
+  </div>
+  <div class="mb-3">
+    <button  type="submit" class="mt-2" style="margin-left:80px;background-color: rgb(20,219,20);color:white;border-radius:50px;border:none;width:50%;height:40px;"><b>Apply</b></button>
+  </div>
+</form>
+
+</div><!--Side bar end-->
+
+<div class="col-md-9">
+  <!-- <div class="row">
+    <div class="col-md-12">
+      <a href=""><img src="{% static 'images/fruits.png' %}" alt="" height="90PX" style="margin-left: 400px;"></a>
+      <a href=""><img src="{% static 'images/vegetable.png' %}" alt="" height="90PX"></a>
+    </div>
+  </div> -->
+<div class="row mt-3">
+
+  
+  {% for x in products %}
+  <div class="col-md-4 mb-4 ">
+      <div class="card" style="width:100%;">
+          <img src="{{x.pimage.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{x.name}}</h5>
+            <h5>{{x.price}}</h5>
+            <a href="/pdetails/{{x.id}}" class="btn text-center" style="margin-left:85px;background-color: rgb(20,219,20);color:white;border-radius:50px;border:none;width:45%;height:40px;"><b>See Details</b></a>
+          </div>
+        </div>
+      </div>
+  {% endfor %}
+ 
+
+</div><!--row ends-->
+</div>
+</div>
+{% endblock 'main' %}

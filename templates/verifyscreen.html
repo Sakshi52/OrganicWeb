@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+   <div class="container">
+    <div class="row">
+        <div class="col-md-5 mx-auto shadow-lg p-4" style="margin-top: 70px;">
+    <!-- <h3 class="text-center">Email Verfication</h3> -->
+    <h5 class="text-center">A Four Digit OTP has been sent to your registered Email Address</h5>
+    
+   <form action="/verifyotp/{{userid}}" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="1" class="form-label"><strong>Enter Your OTP here: </strong></label>
+        <input type="number" name="uotp" class="form-control" id="1" placeholder="Enter OTP">
+      </div>
+       
+      <div class="mb-3">
+        <input type="submit" class="mt-2" style="margin-left:155px;background-color: rgb(20,219,20);color:white;border-radius:50px;border:none;width:30%;height:40px;" value="Verify">
+      </div>
+
+   </form>
+   </div>
+   </div>
+   
+   <div class="row mt-3" style="margin-left:365px">
+    <div class="col-md-6">
+      {% if success %}
+     <div class="alert alert-primary text-center" role="alert"><i class="bi bi-check-lg"></i>
+       {{success}}
+       {{redirecting}}
+     </div>
+     {% endif %}
+    </div>
+  </div>
+  
+   </div>
+   {% if success %}
+   <script>
+    
+    setTimeout(function(){
+         window.location.href = '/login';
+      }, 5000);
+</script>
+{% endif %}
+
+{% endblock 'main' %}

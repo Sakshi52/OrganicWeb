@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+{% load static %}
+
+<div class="container-fluid">
+    <div class="row mb-5 mt-5" style="background: url(static/images/contact.jpg) no-repeat;color: white;;">
+        <div class="col-md-6 mt-5" >
+            <p><b>Green Agriculture</b></p>
+            <h1><b>Welcome To Organic</b></h1>
+            <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quis ex veniam esse error reprehenderit, facere repudiandae provident et cumque.</b></p>
+        </div>
+
+        <div class="row" style="margin-left: 20px">
+            <div class="col-md-4">
+             
+             <p><i class="bi bi-house-fill"></i><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, unde illo!</b></p>
+             <p><i class="bi bi-whatsapp"></i><b>  +919898989898</b></p> 
+             <p><i class="bi bi-telephone-fill"></i><b>  1800 125 4561</b></p>
+             <p><i class="bi bi-envelope-fill"></i><b>  Organicweb@gmail.com</b></p>
+            </div>
+            <div class="col-md-4">
+            <form action="" method="POST">
+                {% csrf_token %}
+            
+                <div class="col-auto mb-4">
+                    <input type="text" name="uname" class="form-control"  placeholder="Name">
+                  </div>
+
+                  <div class="col-auto mb-4">
+                    <input type="email" name="umail" class="form-control" placeholder="Email">
+                  </div>
+
+                  <div class="col-auto mb-4">
+                    <input type="number" name="umob" class="form-control" id="inputPassword2" placeholder="Phone">
+                  </div>
+
+                  <div class="form-floating mb-4">
+                    <textarea class="form-control" name="msg" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Message</label>
+                  </div>
+
+                  
+                    <div class="col-auto mx-auto">
+                    <button type="Submit" class="mb-5" style="color:grey;border-radius:50px;border:none;width:25%;height:40px;" ><strong>Send Now</strong></button>
+                  </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock 'main' %}

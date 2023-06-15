@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 15px;
+    transition:all 0.4s;
+}
+
+.nav-item a:hover{
+    color: rgb(20,219,20);
+}
+
+.navbar-brand{
+    height: 50px;
+    width: 100px;
+}
+
+#s{
+    /* color:red; */
+    height: 45px;
+    outline: none;
+    border: 2px solid rgb(20,219,20);
+    background-color: transparent;
+    border-radius: 20px 0px 0px 20px;
+    border-right: none;
+    box-shadow: none;
+}
+
+#b{
+    height:45px;
+    outline:none;
+    border:none;
+    background-color: rgb(20,219,20);
+    color:white;
+    border-radius: 0px 20px 20px 0px;
+    transition: all 0.4s;
+}
+
+/* .navbar-toggler{
+    font-size: 20px;
+    color: black;
+} */
+
+/* .main{
+    background: url(django-organic website/organicweb/static/images/fr1.jpg) no-repeat; */
+/* } */
+
+/* .btn1:hover{
+    background-color: rgb(20,219,20);
+
+} */

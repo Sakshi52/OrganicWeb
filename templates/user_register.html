@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+
+      <h3 class="text mx-auto text-center mt-5 text-info-emphasis">Create an Account Here</h3>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="row mt-5 mx-auto shadow-lg bg-body-tertiary rounded" style="width:716px">
+
+    <div class="mb-3 row mt-3 mx-5">
+        <label for="1" class="col-sm-3 col-form-label"><strong>Username: </strong></label>
+        <div class="col-auto mx-5 placeholder-glow" >
+          <input type="text" name="uname" class="form-control border border-dark p-2 mb-2 border-opacity-50" id="1" placeholder="Enter Your Username">
+        </div>
+      </div>
+
+
+      <div class="mb-3 row mt-3 mx-5">
+        <label for="2" class="col-sm-3 col-form-label"><strong>First Name:</strong></label>
+        <div class="col-auto mx-5" >
+          <input type="text" name="fname" class="form-control border border-dark p-2 mb-2 border-opacity-50" id="2" placeholder="Enter Your First Name">
+        </div>
+      </div>
+
+      <div class="mb-3 row mt-3 mx-5">
+        <label for="2" class="col-sm-3 col-form-label"><strong>Last Name:</strong></label>
+        <div class="col-auto mx-5" >
+          <input type="text" name="lname" class="form-control border border-dark p-2 mb-2 border-opacity-50" id="2" placeholder="Enter Your Last Name">
+        </div>
+      </div>
+
+      <div class="mb-3 row mt-3 mx-5">
+        <label for="2" class="col-sm-3 col-form-label"><strong>Email:</strong></label>
+        <div class="col-auto mx-5" >
+          <input type="email" name="umail" class="form-control border border-dark p-2 mb-2 border-opacity-50" id="2" placeholder="Enter Your EmailId">
+        </div>
+      </div>
+
+      <div class="mb-3 row mt-3 mx-5">
+        <label for="3" class="col-sm-3 col-form-label"><strong>Password: </strong></label>
+        <div class="col-auto mx-5">
+          <input type="password" name="upass" class="form-control border border-dark p-2 mb-2 border-opacity-50" id="3" placeholder="Enter your Password">
+        </div>
+      </div>
+
+      <div class="mb-3 row mt-3 mx-5" >
+        <label for="4" class="col-sm-3 col-form-label"><strong>Confirm Password: </strong></label>
+        <div class="col-auto mx-5" >
+          <input type="password" name="ucpass" class="form-control border border-dark p-2 mb-2 border-opacity-50" id="4" placeholder="Enter Your Password again">
+        </div>
+      </div>
+
+      <div class="button mb-3 mx-2" >
+        <div class="col-sm-2 mx-auto">
+        <button type="Submit" class="btn btn-success btn-lg"><strong>Register</strong></button>
+      </div>
+    </div>
+    
+      <h6 class="text-center"><a href="/login">Existing user? Login</a></h6>
+    
+    </div><!---registerPage end-->
+</form>
+
+{% endblock 'main' %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+
+<div class="row">
+    {% for x in products %}
+    <div class="col-md-5">
+      <img src="{{x.pimage.url}}"  class="img-thumbnail" alt="" >
+    </div>
+
+    <div class="col-md-7 mt-5">
+        <h5>Product Name:</h5>{{x.name}} <br><br>
+        {% if x.cat == 1 %}
+        <h5>Product Category:</h5>Fruit<br><br>
+        {% elif x.cat == 2 %}
+        <h5>Product Category:</h5>Vegetables<br><br>
+        {% endif %}
+        <h5>Price:</h5>Rs.{{x.price}} <br><br>
+        <h5>Product Description:</h5> <br><br>
+       <div class="row">
+        <div class="col-md-3">
+            <a href="/cart/{{x.id}}" class="btn text-center" style="margin-left:85px;background-color: rgb(20,219,20);color:white;border-radius:50px;border:none;width:100%;height:40px;"><b>Add to Cart</b></a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="/viewcart" class="btn text-center" style="margin-left:85px;background-color: rgb(20,219,20);color:white;border-radius:50px;border:none;width:100%;height:40px;"><b>View Cart</b></a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="/" class="btn text-center" style="margin-left:85px;background-color: rgb(20,219,20);color:white;border-radius:50px;border:none;width:100%;height:40px;"><b>Shop More</b></a>
+        </div>
+       </div>
+        
+                
+                
+        <br>
+        
+        <div class="row mt-3">
+          <div class="col-md-6">
+            {% if success %}
+           <div class="alert alert-primary text-center" role="alert">
+             {{success}}
+           </div>
+           {% endif %}
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-6">
+            {% if msg %}
+           <div class="alert alert-danger text-center" role="alert">
+             {{msg}}
+           </div>
+           {% endif %}
+          </div>
+        </div>
+        
+        
+    </div>
+    {% endfor %}
+
+</div>
+
+
+{% endblock 'main' %}
